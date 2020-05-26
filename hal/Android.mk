@@ -358,6 +358,12 @@ endif
 #    LOCAL_SRC_FILES += audio_extn/auto_hal.c
 #endif
 
+# OEM Specific Feature
+ifeq ($(strip $(AUDIO_FEATURE_ELLIPTIC_ULTRASOUND_SUPPORT)),true)
+    LOCAL_CFLAGS += -DELLIPTIC_ULTRASOUND_ENABLED
+    LOCAL_SRC_FILES += audio_extn/ultrasound.c
+endif
+
 LOCAL_SHARED_LIBRARIES += libbase libhidlbase libhwbinder libutils android.hardware.power@1.2 liblog
 LOCAL_SRC_FILES += audio_perf.cpp
 

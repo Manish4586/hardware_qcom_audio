@@ -231,6 +231,10 @@ enum {
     /*Audio FM Tuner usecase*/
     USECASE_AUDIO_FM_TUNER_EXT,
     AUDIO_USECASE_MAX
+
+    /*Elliptical Ultrasound*/
+    USECASE_AUDIO_ULTRASOUND_RX,
+    USECASE_AUDIO_ULTRASOUND_TX
 };
 
 const char * const use_case_table[AUDIO_USECASE_MAX];

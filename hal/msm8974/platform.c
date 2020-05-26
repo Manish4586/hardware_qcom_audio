@@ -486,6 +486,8 @@ static int pcm_device_table[AUDIO_USECASE_MAX][2] = {
     [USECASE_AUDIO_PLAYBACK_PHONE] = {PHONE_PCM_DEVICE,
                                       PHONE_PCM_DEVICE},
     [USECASE_AUDIO_FM_TUNER_EXT] = {-1, -1},
+    [USECASE_AUDIO_ULTRASOUND_RX] = {ULTRASOUND_PCM_DEVICE, -1},
+    [USECASE_AUDIO_ULTRASOUND_TX] = {-1, ULTRASOUND_PCM_DEVICE},
 };
 
 /* Array to store sound devices */
@@ -590,6 +592,7 @@ static const char * const device_table[SND_DEVICE_MAX] = {
     [SND_DEVICE_OUT_BUS_SYS] = "bus-speaker",
     [SND_DEVICE_OUT_BUS_NAV] = "bus-speaker",
     [SND_DEVICE_OUT_BUS_PHN] = "bus-speaker",
+    [SND_DEVICE_OUT_ULTRASOUND_HANDSET] = "ultrasound-handset",
 
     /* Capture sound devices */
     [SND_DEVICE_IN_HANDSET_MIC] = "handset-mic",
@@ -728,6 +731,7 @@ static const char * const device_table[SND_DEVICE_MAX] = {
     [SND_DEVICE_IN_HANDSET_QMIC_AND_EC_REF_LOOPBACK] = "handset-qmic-and-ec-ref-loopback",
     [SND_DEVICE_IN_HANDSET_6MIC_AND_EC_REF_LOOPBACK] = "handset-6mic-and-ec-ref-loopback",
     [SND_DEVICE_IN_HANDSET_8MIC_AND_EC_REF_LOOPBACK] = "handset-8mic-and-ec-ref-loopback",
+    [SND_DEVICE_IN_ULTRASOUND_MIC] = "ultrasound-mic",
 };
 
 // Platform specific backend bit width table
@@ -1291,6 +1295,8 @@ static struct name_to_index usecase_name_index[AUDIO_USECASE_MAX] = {
     {TO_NAME_INDEX(USECASE_AUDIO_PLAYBACK_SYS_NOTIFICATION)},
     {TO_NAME_INDEX(USECASE_AUDIO_PLAYBACK_NAV_GUIDANCE)},
     {TO_NAME_INDEX(USECASE_AUDIO_PLAYBACK_PHONE)},
+    {TO_NAME_INDEX(USECASE_AUDIO_ULTRASOUND_RX)},
+    {TO_NAME_INDEX(USECASE_AUDIO_ULTRASOUND_TX)},
 };
 
 static const struct name_to_index usecase_type_index[USECASE_TYPE_MAX] = {
